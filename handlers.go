@@ -269,6 +269,7 @@ func (handler *ObjectWebHandler) CheckExists(w http.ResponseWriter, r *http.Requ
 func (handler *ObjectWebHandler) Download(w http.ResponseWriter, r *http.Request) {
 	params := context.Get(r, CtxParamsKey).(httprouter.Params)
 	if !bson.IsObjectIdHex(params.ByName("id")) {
+		w.Header().Set("Content-Type", "application/json; charset=utf-8")
 		respondWithError(w, http.StatusBadRequest, "Invalid object ID", nil)
 		return
 	}
@@ -278,9 +279,11 @@ func (handler *ObjectWebHandler) Download(w http.ResponseWriter, r *http.Request
 
 	file, err := fs.OpenId(objID)
 	if err == mgo.ErrNotFound {
+		w.Header().Set("Content-Type", "application/json; charset=utf-8")
 		respondWithError(w, http.StatusNotFound, "Object does not exist", err)
 		return
 	} else if err != nil {
+		w.Header().Set("Content-Type", "application/json; charset=utf-8")
 		respondWithError(w, http.StatusInternalServerError, "Operational error", err)
 		return
 	}
