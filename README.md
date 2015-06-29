@@ -25,7 +25,7 @@ Updating/deleting the object/bucket is currently work in progress.
 
 ## Authentication
 
-No authentication is built inside of this gateway. The recommended way is to use hide it behind a reverse proxy. For example, you can use `nginx` with `--with-http_auth_request_module` and use the following configuration snippet:
+No authentication is built inside of this gateway. The recommended way is to hide it behind a reverse proxy. For example, you can use `nginx` with `--with-http_auth_request_module` and use the following configuration snippet:
 
         location ~ ^/downloads/(?<section>.*) {
             # If you want to disable uploads
