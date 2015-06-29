@@ -68,7 +68,7 @@ Some examples of consuming the API using HTTPie CLI.
 
 ### Upload a file (and assing it to a bucket)
 
-    $ http --form post :6000/objects object@/Users/alex/Projects/sit-dev-layout/sit-storage-gateway/my_photo.png content_type="image/png" filename="cockpit-test.json" extra.bucket="tests"
+    $ http --form post :6000/objects object@/Users/alex/Downloads/my_photo.png content_type="image/png" filename="my_photo.png" extra.bucket="tests"
      
     HTTP/1.1 201 Created
     Content-Length: 290
@@ -142,11 +142,11 @@ Some examples of consuming the API using HTTPie CLI.
     $ http -d get localhost:6000/objects/558be4f91bdaffc7a4000001
     HTTP/1.1 200 OK
     Connection: keep-alive
-    Content-Disposition: inline; filename="cockpit-test.json"
-    Content-Type: application/json
+    Content-Disposition: inline; filename="my_photo.png"
+    Content-Type: image.png
     Date: Thu, 25 Jun 2015 12:13:08 GMT
     Server: nginx
     Transfer-Encoding: chunked
     Vary: Accept-Encoding
-    Downloading to "cockpit-test.json"
+    Downloading to "my_photo.png"
     Done. 15.72 kB in 0.00044s (34.57 MB/s)
