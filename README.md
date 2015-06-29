@@ -15,11 +15,11 @@ See `env.sh.sample` for all required configuration for the `storage-gateway` exe
 Available operations on buckets and objects:
 
  * POST /objects
- * HEAD /objects/<id>
- * GET /objects/<id>/meta
- * GET /objects/<id>
- * HEAD /bucket/<name>
- * GET /bucket/<name>
+ * HEAD /objects/ID
+ * GET /objects/ID/meta
+ * GET /objects/ID
+ * HEAD /bucket/NAME
+ * GET /bucket/NAME
 
 Updating/deleting the object/bucket is currently work in progress.
 
