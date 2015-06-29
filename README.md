@@ -68,7 +68,7 @@ Some examples of consuming the API using HTTPie CLI.
 
 ### Upload a file (and assing it to a bucket)
 
-    $ http --form post :6000/objects object@/Users/alex/Projects/4tree/sit-dev-layout/sit-storage-gateway/my_photo.png content_type="image/png" filename="cockpit-test.json" extra.bucket="tests"
+    $ http --form post :6000/objects object@/Users/alex/Projects/sit-dev-layout/sit-storage-gateway/my_photo.png content_type="image/png" filename="cockpit-test.json" extra.bucket="tests"
      
     HTTP/1.1 201 Created
     Content-Length: 290
